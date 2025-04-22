@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
-  private final CustomerService customerService;
+    private final CustomerService customerService;
 
-  public CustomerController(CustomerService customerService) {
-    this.customerService = customerService;
-  }
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
-  @PostMapping
-  public ResponseEntity<Customer> createCustomer(@RequestBody CustomerDTO customerDTO) {
-    return ResponseEntity.ok(customerService.create(customerDTO));
-  }
+    @PostMapping
+    public ResponseEntity<Customer> createCustomer(@RequestBody CustomerDTO customerDTO) {
+        return ResponseEntity.ok(customerService.create(customerDTO));
+    }
 }
